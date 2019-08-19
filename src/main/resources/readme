@@ -1,0 +1,14 @@
+shiro的四大作用：
+	认证 、 授权、 加密 、会话管理
+shiro三大核心组件：
+	Subject组件：代指当前用户
+	SecurityManager组件：用于管理所有的Subject
+	Reaml组件：用户验证用户的认证与授权
+
+shiro
+1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)
+	Bean中设置需要拦截的url，和需要放行的url
+	
+
+2: 
+	
