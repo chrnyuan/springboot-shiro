@@ -6,6 +6,45 @@
 </head>
 <body>
 
-add 
+	<h3>add</h3>
+
+	<form action="/addUser" method="post">
+	账户	<input id="username" type="text" name="username">
+	密码	<input id="pwd" type="password" name="password"><br>
+	<input type="submit" value="登陆" ><i id="i" style="color: red"/>
+	</form>
+	
+	
+	
+	
 </body>
+
+<!-- <script src="../../static/jquery-3.3.1.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+		function submit(){
+			$.ajax({
+				type: "post",
+				url: "http://localhost:8080/user/add",
+				contentType: "application/x-www-form-urlencoded; charset=utf-8",
+				data: {"username" : $("#username").val(),"password" : $("#pwd").val()},
+				success : function(data){
+					console.log(data);
+					if(data.code == 0){
+						$("#i").text("添加成功");
+					}else if(data.code == 1){
+						$("#i").text(data.msg);
+					}
+				},
+				
+				error: function(){
+					alert("异常");
+					
+				}
+			})
+			
+			
+		}
+	
+	</script>
 </html>

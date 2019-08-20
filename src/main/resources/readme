@@ -9,6 +9,10 @@ shiro
 1：创建shiroConfig类 ，配置webfilterBean 把securityManager注册到webfilterBean(安全管理器)
 	Bean中设置需要拦截的url，和需要放行的url
 	
+2: 创建SecurityManager（安全管理器） ，实例化DefaultWebSecurityManager,将realm交给SecurityManager
+	管理。
+	DefaultWebSecurityManager 
+	
+3：创建自定义的Realm,继承Authorizing,重写认证和授权的方法。
 
-2: 
 	

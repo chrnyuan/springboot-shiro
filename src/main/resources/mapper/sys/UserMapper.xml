@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxx.shiroDemo.sys.mapper.UserMapper">
+    
+	<!-- 查询用户的所有权限 -->
+    <select id="queryAllPerms" resultType="string">
+        select m.url from sys_user_role ur
+        
+        LEFT JOIN sys_role_menu rm on ur.roleId = rm.roleId
+        
+        LEFT JOIN sys_menu m on rm.menuId = m.id
+        
+        where ur.userId = #{userId};
+    </select>
+
+</mapper>
